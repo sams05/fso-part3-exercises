@@ -24,6 +24,13 @@ const notes = [
     },
 ];
 
+app.get('/info', (request, response) => {
+    response.send(`
+        <p>Phonebook has info for ${notes.length} people</p>
+        <p>${new Date()}</p>
+    `);
+});
+
 app.get('/api/persons', (request, response) => {
     response.json(notes);
 });
