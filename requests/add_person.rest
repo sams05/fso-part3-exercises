@@ -5,3 +5,39 @@ Content-Type: application/json
     "name": "Paul",
     "number": "520-2526-2156"
 }
+###
+# No number
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Gorg"
+}
+###
+# No name
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "number": "520-2526-2156"
+}
+###
+# No name and number
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "myProp": 152
+}
+###
+# With extraneous properties and id
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "id": 3124,
+    "name": "Koko",
+    "number": "520-4591-8131",
+    "myprop": 215,
+    "myprop2": true
+}
