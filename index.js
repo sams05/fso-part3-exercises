@@ -24,6 +24,8 @@ let persons = [
     },
 ];
 
+app.use(express.json());
+
 app.get('/info', (request, response) => {
     response.send(`
         <p>Phonebook has info for ${persons.length} people</p>
@@ -47,9 +49,18 @@ app.get('/api/persons/:id', (request, response) => {
 
 app.delete('/api/persons/:id', (request, response) => {
     const id = +request.params.id;
-    persons = persons.filter(person => person.id !== id);
+    persons = persons.filter((person) => person.id !== id);
     response.status(204).end();
-})
+});
+
+const generateId = () => Math.floor(1000 * Math.random());
+
+app.post('/api/persons', (request, response) => {
+    const newPerson = request.body;
+    newPerson.id = generateId();
+    persons = persons.concat(newPerson);
+    response.json(newPerson);
+});
 
 const PORT = 3001;
 app.listen(PORT, () => {
