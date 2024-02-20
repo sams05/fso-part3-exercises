@@ -7,6 +7,10 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "build:ui": "rm -rf dist && cd ../fso-exercises/part2/phonebook && npm run build && cp -r dist ../../../fso-part3-exercises",
+    "deploy": "fly deploy",
+    "deploy:full": "npm run build:ui && npm run deploy",
+    "logs:prod": "fly logs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
