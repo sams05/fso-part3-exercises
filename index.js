@@ -17,18 +17,24 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :req-data')); // Must be used after the json parser for easy access to request data
 app.use(express.static('dist'));
-/*
-app.get('/info', (request, response) => {
-    response.send(`
-        <p>Phonebook has info for ${persons.length} people</p>
-        <p>${new Date()}</p>
-    `);
+
+app.get('/info', (request, response, next) => {
+    Person.find({})
+        .then((persons) => {
+            response.send(`
+                <p>Phonebook has info for ${persons.length} people</p>
+                <p>${new Date()}</p>
+            `);
+        })
+        .catch((error) => next(error));
 });
-*/
-app.get('/api/persons', (request, response) => {
-    Person.find({}).then((persons) => {
-        response.json(persons);
-    });
+
+app.get('/api/persons', (request, response, next) => {
+    Person.find({})
+        .then((persons) => {
+            response.json(persons);
+        })
+        .catch((error) => next(error));
 });
 
 app.get('/api/persons/:id', (request, response, next) => {
