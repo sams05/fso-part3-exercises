@@ -1,7 +1,17 @@
-## With invalid id format
+# With invalid id format
 DELETE http://localhost:3001/api/persons/2
 
 ###
 
-## With valid id format
+# With valid id format
 DELETE http://localhost:3001/api/persons/5c41c90e84d891c15dfa3431
+
+###############################
+
+# Deployed
+
+# With invalid id format
+DELETE https://fso-phonebook-01.fly.dev/api/persons/2
+
+# With valid id format
+DELETE https://fso-phonebook-01.fly.dev/persons/5c41c90e84d891c15dfa3431

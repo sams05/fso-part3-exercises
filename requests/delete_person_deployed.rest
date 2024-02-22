@@ -1,1 +1,0 @@
-DELETE https://fso-phonebook-01.fly.dev/api/persons/2
