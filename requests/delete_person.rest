@@ -1,1 +1,7 @@
+## With invalid id format
 DELETE http://localhost:3001/api/persons/2
+
+###
+
+## With valid id format
+DELETE http://localhost:3001/api/persons/5c41c90e84d891c15dfa3431
