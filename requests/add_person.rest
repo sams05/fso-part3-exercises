@@ -41,7 +41,15 @@ Content-Type: application/json
     "myprop": 215,
     "myprop2": true
 }
+###
+# Name less than 3 characters
+POST http://localhost:3001/api/persons
+Content-Type: application/json
 
+{
+    "name": "Ar",
+    "number": "045-1232456"
+}
 ###############################
 
 # Deployed
@@ -87,4 +95,13 @@ Content-Type: application/json
     "number": "520-4591-8131",
     "myprop": 215,
     "myprop2": true
+}
+###
+# Name less than 3 characters
+POST https://fso-phonebook-01.fly.dev/api/persons
+Content-Type: application/json
+
+{
+    "name": "Ar",
+    "number": "045-1232456"
 }
