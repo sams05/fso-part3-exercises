@@ -50,6 +50,52 @@ Content-Type: application/json
     "name": "Ar",
     "number": "045-1232456"
 }
+###
+# Valid number 1
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Gor",
+    "number": "09-1234556"
+}
+###
+# Valid number 2
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Gor2",
+    "number": "040-22334455"
+}
+###
+# Invalid number 1
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Corg1",
+    "number": "1234556"
+}
+###
+# Invalid number 2
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Corg2",
+    "number": "1-22334455"
+}
+###
+# Invalid number 1
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Corg3",
+    "number": "10-22-334455"
+}
+
 ###############################
 
 # Deployed
