@@ -57,3 +57,67 @@ Content-Type: application/json
     "name": "Arto Vihavainen",
     "number": "10-22-334455"
 }
+
+###############################
+
+# Deployed
+
+PUT https://fso-phonebook-01.fly.dev/api/persons/65d60423bac63f38a54bacb8
+Content-Type: application/json
+
+{
+    "name": "Paul",
+    "number": "09-1234556"
+}
+
+###
+
+# Change back
+PUT https://fso-phonebook-01.fly.dev/api/persons/65d60423bac63f38a54bacb8
+Content-Type: application/json
+
+{
+    "name": "Arto Vihavainen",
+    "number": "045-1232456"
+}
+
+###
+
+# Name less than 3 characters
+PUT https://fso-phonebook-01.fly.dev/api/persons/65d60423bac63f38a54bacb8
+Content-Type: application/json
+
+{
+    "name": "Ar",
+    "number": "045-1232456"
+}
+###
+
+# Invalid phone number 1
+PUT https://fso-phonebook-01.fly.dev/api/persons/65d60423bac63f38a54bacb8
+Content-Type: application/json
+
+{
+    "name": "Arto Vihavainen",
+    "number": "1234556"
+}
+###
+
+# Invalid phone number 2
+PUT https://fso-phonebook-01.fly.dev/api/persons/65d60423bac63f38a54bacb8
+Content-Type: application/json
+
+{
+    "name": "Arto Vihavainen",
+    "number": "1-22334455"
+}
+###
+
+# Invalid phone number 3
+PUT https://fso-phonebook-01.fly.dev/api/persons/65d60423bac63f38a54bacb8
+Content-Type: application/json
+
+{
+    "name": "Arto Vihavainen",
+    "number": "10-22-334455"
+}
